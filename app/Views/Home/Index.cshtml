@@ -1,8 +1,28 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "WZD и C#";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Тестирование WZD-сервера</h1>
+    <p><a href="https://github.com/eltaline/wzd">WZD</a> - файловое хранилище с возможностями NoSQL (сохранение, удаление, поиск контента).</p>
+    <p>Данный проект представляет собой интерфейс для обращений к WZD, написанный на языке C#. Пока реализована только возможность работы с текстовыми (txt, html, json) ресурсами. Ниже приводится несколько тестов. Для их прохождения WZD-сервер должен быть запущен по адресу <code>http://localhost:9699</code>.</p>
+
+    <div class="row testing">
+        <div class="col"><button class="btn btn-primary" id="test-put" onclick="testWZD()">Отправка текста методом PUT</button></div>
+        <div class="col">Результат:</div>
+        <div class="col"><code></code></div>
+    </div>
+
+    <!-- div class="row testing">
+        <div class="col"><button class="btn btn-primary" id="test-post" onclick="testWZD()">Отправка текста методом POST</button></div>
+        <div class="col">Результат:</div>
+        <div class="col"><code></code></div>
+    </div -->
+
+    <div class="row testing">
+        <div class="col"><button class="btn btn-primary" id="test-get" onclick="testWZD()">Получение текста</button></div>
+        <div class="col">Результат:</div>
+        <div class="col"><code></code></div>
+    </div>
+
 </div>
