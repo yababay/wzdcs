@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Net;
+using System.IO;
 
 namespace yababay.wzdcs
 {
@@ -25,61 +26,6 @@ namespace yababay.wzdcs
     }
     internal class WZDRequestFactory
     {
-        /*
-        public static WebRequest GetCountArchive(string url, json = false, offset = OFFSET, limit = LIMIT) 
-        { 
-            return Create(url, _json: json, offs: offset, lim: limit, scope: Scopes.Archive, subject: Subjects.Count); 
-        }
-        public static WebRequest GetCountFiles(string url, json = false, offset = OFFSET, limit = LIMIT) 
-        { 
-            return Create(url, _json: json, offs: offset, lim: limit, scope: Scopes.Files, subject: Subjects.Count); 
-        }
-        public static WebRequest GetCountAll(string url, json = false, offset = OFFSET, limit = LIMIT) 
-        { 
-            return Create(url, _json: json, offs: offset, lim: limit, scope: Scopes.All, subject: Subjects.Count); 
-        }
-        public static WebRequest GetCountUniq(string url, json = false, offset = OFFSET, limit = LIMIT) 
-        { 
-            return Create(url, _json: json, offs: offset, lim: limit, scope: Scopes.Uniq, subject: Subjects.Count); 
-        }
-        public static WebRequest GetInfoArchive(string url, json = false, offset = OFFSET, limit = LIMIT) 
-        { 
-            return Create(url, _json: json, offs: offset, lim: limit, scope: Scopes.Archive, subject: Subjects.Info); 
-        }
-        public static WebRequest GetInfoFiles(string url, json = false, offset = OFFSET, limit = LIMIT) 
-        { 
-            return Create(url, _json: json, offs: offset, lim: limit, scope: Scopes.Files, subject: Subjects.Info); 
-        }
-        public static WebRequest GetInfoAll(string url, json = false, offset = OFFSET, limit = LIMIT) 
-        { 
-            return Create(url, _json: json, offs: offset, lim: limit, scope: Scopes.All, subject: Subjects.Info); 
-        }
-        public static WebRequest GetInfoUniq(string url, json = false, offset = OFFSET, limit = LIMIT) 
-        { 
-            return Create(url, _json: json, offs: offset, lim: limit, scope: Scopes.Uniq, subject: Subjects.Info); 
-        }
-        public static WebRequest GetKeysArchive(string url, json = false, offset = OFFSET, limit = LIMIT) 
-        { 
-            return Create(url, _json: json, offs: offset, lim: limit, scope: Scopes.Archive, subject: Subjects.Keys); 
-        }
-        public static WebRequest GetKeysFiles(string url, json = false, offset = OFFSET, limit = LIMIT) 
-        { 
-            return Create(url, _json: json, offs: offset, lim: limit, scope: Scopes.Files, subject: Subjects.Keys); 
-        }
-        public static WebRequest GetKeysAll(string url, json = false, offset = OFFSET, limit = LIMIT) 
-        { 
-            return Create(url, _json: json, offs: offset, lim: limit, scope: Scopes.All, subject: Subjects.Keys); 
-        }
-        public static WebRequest GetKeysUniq(string url, json = false, offset = OFFSET, limit = LIMIT) 
-        { 
-            return Create(url, _json: json, offs: offset, lim: limit, scope: Scopes.Uniq, subject: Subjects.Keys); 
-        }
-        public static WebRequest GetKeys(string url, bool json = false, int offset = OFFSET, int limit = LIMIT) 
-        { 
-            return Create(url, _json: json, _offset: offset, _limit: limit, scope: Scopes.Uniq, subject: Subjects.Keys); 
-        }
-        */
-
 
         internal static WebRequest Create(
                 string url,

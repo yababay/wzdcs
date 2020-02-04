@@ -8,21 +8,40 @@
     <p>Данный проект представляет собой интерфейс для обращений к WZD, написанный на языке C#. Пока реализована только возможность работы с текстовыми (txt, html, json) ресурсами. Ниже приводится несколько тестов. Для их прохождения WZD-сервер должен быть запущен по адресу <code>http://localhost:9699</code>.</p>
 
     <div class="row testing">
-        <div class="col"><button class="btn btn-primary" id="test-put" onclick="testWZD()">Отправка текста методом PUT</button></div>
+        <div class="col"><button class="btn btn-primary" id="test-put" onclick="testWZD()">Отправка простого текста</button></div>
+        <div class="col">Результат:</div>
+        <div class="col"><code></code></div>
+    </div>
+
+    <div class="row testing">
+        <div class="col"><button class="btn btn-primary" id="test-get-0" onclick="testWZD()">Получение простого текста</button></div>
+        <div class="col">Результат:</div>
+        <div class="col"><code></code></div>
+    </div>
+
+    <div class="row testing">
+        <div class="col"><button class="btn btn-primary" id="test-post" onclick="testWZD()">Отправка json-объекта</button></div>
+        <div class="col">Результат:</div>
+        <div class="col"><code></code></div>
+    </div>
+
+    <div class="row testing">
+        <div class="col"><button class="btn btn-primary" id="test-get-1" onclick="testWZD()">Получение json-объекта</button></div>
         <div class="col">Результат:</div>
         <div class="col"><code></code></div>
     </div>
 
     <!-- div class="row testing">
-        <div class="col"><button class="btn btn-primary" id="test-post" onclick="testWZD()">Отправка текста методом POST</button></div>
-        <div class="col">Результат:</div>
-        <div class="col"><code></code></div>
-    </div -->
-
-    <div class="row testing">
-        <div class="col"><button class="btn btn-primary" id="test-get" onclick="testWZD()">Получение текста</button></div>
+        <div class="col"><button class="btn btn-primary" id="test-binary" onclick="testWZD()">Отправка jpg-файла</button></div>
+        <form><input type="file" name="binary"></form>
         <div class="col">Результат:</div>
         <div class="col"><code></code></div>
     </div>
+
+    <div class="row testing">
+        <div class="col"><button class="btn btn-primary" id="test-get-2" onclick="testWZD()">Получение jpg-файла</button></div>
+        <div class="col">Результат:</div>
+        <div class="col"><img></div>
+    </div -->
 
 </div>

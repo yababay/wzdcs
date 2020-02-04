@@ -27,14 +27,19 @@ namespace yababay.wzdcs
             return GetResponse(Create(url, method: Methods.DELETE)); 
         }
 
-        public static WZDResponse PostFile(string url, string content) 
+        public static Stream GetStream(string url) 
         { 
-            return GetResponse(Create(url, method: Methods.POST), content); 
+            return Create(url, method: Methods.POST).GetRequestStream(); 
         }
 
-        public static WZDResponse PutFile(string url, string content) 
+        public static WZDResponse PostFile(string url, string content = null, Stream upload = null) 
         { 
-            return GetResponse(Create(url, method: Methods.PUT), content); 
+            return GetResponse(Create(url, method: Methods.POST), content, upload); 
+        }
+
+        public static WZDResponse PutFile(string url, string content = null, Stream upload = null) 
+        { 
+            return GetResponse(Create(url, method: Methods.PUT), content, upload); 
         }
 
         // Statistics
@@ -99,7 +104,7 @@ namespace yababay.wzdcs
             return GetResponse(Create(url, json: json, offset: offset, limit: limit, scope: Scopes.Uniq, subject: Subjects.Keys)); 
         }
 
-        private static WZDResponse GetResponse(WebRequest request, string content = null)
+        private static WZDResponse GetResponse(WebRequest request, string content = null, Stream upload = null)
         {
             if(content != null){
                 byte[] byteArray = Encoding.UTF8.GetBytes(content);
