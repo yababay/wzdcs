@@ -27,19 +27,22 @@ namespace yababay.wzdcs
             return GetResponse(Create(url, method: Methods.DELETE)); 
         }
 
-        public static Stream GetStream(string url) 
+        public static Stream GetStream(string url, long length) 
         { 
-            return Create(url, method: Methods.POST).GetRequestStream(); 
+            WebRequest webRequest = Create(url, method: Methods.POST); 
+            webRequest.Method = WebRequestMethods.Http.Post;
+            webRequest.ContentLength = length;
+            return webRequest.GetRequestStream(); 
         }
 
-        public static WZDResponse PostFile(string url, string content = null, Stream upload = null) 
+        public static WZDResponse PostFile(string url, string content = null, Stream upload = null, bool archive = false) 
         { 
-            return GetResponse(Create(url, method: Methods.POST), content, upload); 
+            return GetResponse(Create(url, method: Methods.POST, archive: archive), content, upload); 
         }
 
-        public static WZDResponse PutFile(string url, string content = null, Stream upload = null) 
+        public static WZDResponse PutFile(string url, string content = null, Stream upload = null, bool archive = false) 
         { 
-            return GetResponse(Create(url, method: Methods.PUT), content, upload); 
+            return GetResponse(Create(url, method: Methods.PUT, archive: archive), content, upload); 
         }
 
         // Statistics

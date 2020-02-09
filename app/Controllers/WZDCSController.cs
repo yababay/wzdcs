@@ -51,8 +51,10 @@ namespace app.WZDCSControllers
                 {
                     string url = BaseUrl + formFile.FileName; 
                     Console.WriteLine(url);
-                    Stream requestStream = WZDClient.GetStream(url);
+                    Console.WriteLine(formFile.Length);
+                    Stream requestStream = WZDClient.GetStream(url, formFile.Length);
                     formFile.CopyTo(requestStream);
+                    requestStream.Flush();
                     requestStream.Close();
                 }
             }
